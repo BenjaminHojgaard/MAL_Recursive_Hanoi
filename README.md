@@ -2,4 +2,4 @@
 
 ##
 This program uses a scanner to receive input from user determining how many disks the Hanoi Towers should consist of.
-Only non-negative natural numbers are valid.
+\Only non-negative natural numbers are valid.
