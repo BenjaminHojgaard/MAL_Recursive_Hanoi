@@ -15,16 +15,18 @@ public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         System.out.println("Press a number. Anything over 20 will take a looong time.");
-
-        while (scan.hasNext()){
-            count = 0;
-            int n = scan.nextInt();
-            setup(n);
-            printTowers();
-            towerOfHanoi(n,startPole, endPole, midPole);
-            System.out.println("There were " + count + " moves.\nPress a number. Anything over 20 will take a looong time.");
+        try {
+            while (scan.hasNext()) {
+                count = 0;
+                int n = scan.nextInt();
+                setup(n);
+                printTowers();
+                towerOfHanoi(n, startPole, endPole, midPole);
+                System.out.println("There were " + count + " moves.\nPress a number. Anything over 20 will take a looong time.");
+            }
+        } catch (Exception e) {
+            System.out.println("Nice try. Maybe type a number next time.");
         }
-
     }
 
     static void setup(int n) {
@@ -51,7 +53,7 @@ public class Main {
 
     }
 
-    static void move (Stack<Integer> from, Stack<Integer> to) {
+    static void move(Stack<Integer> from, Stack<Integer> to) {
         var disk = from.pop();
         to.push(disk);
         printTowers();
